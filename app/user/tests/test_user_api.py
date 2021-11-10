@@ -44,7 +44,8 @@ class PublicUserApiTests(TestCase):
         """Test that password must be more than 5 characters"""
         payload = {
             'email': 'test@gmail.com',
-            'password': 'pw'
+            'password': 'pw',
+            'name': 'Test name'
         }
         res = self.client.post(CREATE_USER_URL, payload)
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
