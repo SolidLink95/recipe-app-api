@@ -75,7 +75,7 @@ class PublicUserApiTests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_create_token_no_user(self):
-        """Test that token is not created if user doesnt exist"""
+        """Test that token is not created if user doesn't exist"""
         payload = {'email': 'test@gmail.com', 'password': 'testpass'}
         res = self.client.post(TOKEN_URL, payload)
 
@@ -123,7 +123,7 @@ class PrivateUserApiTests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
 
     def test_update_user_profile(self):
-        """Test updating the user profile for authnticated user"""
+        """Test updating the user profile for authenticated user"""
         payload = {'name': 'new name', 'password': 'newpassword123'}
 
         res = self.client.patch(ME_URL, payload)
