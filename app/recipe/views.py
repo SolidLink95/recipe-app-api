@@ -28,6 +28,6 @@ class TagViewSet(BaseRecipeAttr):
 
 
 class IngredientViewSet(BaseRecipeAttr):
-    """Manage ingredients in the database"""
+    """Manage ingredients in the database. asdf"""
     queryset = Ingredient.objects.all()
     serializer_class = serializers.IngredientSerializer
